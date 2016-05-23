@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Graph xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Vertices>
+    <Vertex Name="v1" />
+    <Vertex Name="v2" />
+    <Vertex Name="v3" />
+    <Vertex Name="v4" />
+    <Vertex Name="v5" />
+  </Vertices>
+  <Edges>
+    <Edge Name="e1" V1="v5" V2="v1" Weight="93" />
+    <Edge Name="e2" V1="v4" V2="v1" Weight="262" />
+    <Edge Name="e3" V1="v2" V2="v1" Weight="859" />
+    <Edge Name="e4" V1="v5" V2="v4" Weight="304" />
+    <Edge Name="e5" V1="v5" V2="v3" Weight="38" />
+  </Edges>
+</Graph>
