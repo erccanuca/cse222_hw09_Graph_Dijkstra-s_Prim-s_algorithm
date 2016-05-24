@@ -12,15 +12,17 @@ import java.util.Iterator;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
- *
+ * This method Test all class
  * @author ercan
  */
 public class Main {
-
+    /**
+     * Our main main class test
+     * @param args command line args
+     * @throws FileNotFoundException When file is not find out.
+     */
     public static void main(String[] args) throws FileNotFoundException {
      
             System.out.println("----------Matrix Graph Test-----------");
@@ -28,19 +30,27 @@ public class Main {
             matrixGraphTest();
             long endTime = System.currentTimeMillis();
             long totalTime = endTime - startTime;
-            System.out.printf("matrixGraphTest:Took approximately %d ms\n", totalTime);
+            System.out.printf("matrixGraphTest:Took approximately %dm-%ds-%dms-%dns\n",
+                                        ((totalTime)/1000)/60, (totalTime)/1000,(totalTime)%1000,(totalTime)/10000000);
             System.out.println("-------Matrix Graph Test END-----------\n\n");
             System.out.println("----------List Graph Test--------------");
-            startTime = System.currentTimeMillis();
+            
+            long startTime2 = System.currentTimeMillis();
             listGraphTest();
-            endTime = System.currentTimeMillis();
-            totalTime = endTime - startTime;
-            System.out.printf("listGraphTest:Took approximately %d ns\n", totalTime);
             System.out.println("--------List Graph Test END------------");
+            long endTime2 = System.currentTimeMillis();
+            long totalTime2 = endTime2 - startTime2;
+            System.out.printf("listGraphTest:Took approximately %dm-%ds-%dms-%dns\n",
+                                        ((totalTime2)/1000)/60, (totalTime2)/1000,(totalTime2)%1000,(totalTime2)/10000000);
+            System.out.printf("matrixGraphTest:Took approximately %dm-%ds-%dms-%dns\n",
+                                        ((totalTime)/1000)/60, (totalTime)/1000,(totalTime)%1000,(totalTime)/10000000);
         
 
     }
-
+    /**
+     * Matrix graph tests
+     * @throws FileNotFoundException When file is not find out.
+     */
     public static void matrixGraphTest() throws FileNotFoundException {
 
         matrixTest_1();
@@ -66,13 +76,16 @@ public class Main {
        // matrixTest_21();
 
     }
-
+    /**
+     * List Graph tests
+     * @throws FileNotFoundException When file is not find out.
+     */
     public static void listGraphTest() throws FileNotFoundException {
         ListTest_1();
-       /* ListTest_2();
+        ListTest_2();
         ListTest_3();
         ListTest_4();
-        ListTest_5();
+        /*ListTest_5();
         ListTest_6();
         ListTest_7();
         ListTest_8();
@@ -90,13 +103,17 @@ public class Main {
         ListTest_20();
         ListTest_21();*/
     }
-
+    /**
+     * Dijkstra Algorithm Test 
+     * @param graph Abstract class type
+     * @param vertexNum number of vertex.
+     */
     public static void DijkstraAlgorithm_Test(AbstractGraph graph, int vertexNum) {
         System.out.println("\n\t--------------Dijkstra Algoritm Test----------");
         int[] pred = new int[vertexNum];
         double[] dist = new double[vertexNum];
        
-        graph.dijkstrasAlgorithm(graph, 0, pred, dist);
+        graph.dijkstrasAlgorithm(graph, 1, pred, dist);
         System.out.println("\tPred\tDist\tWeight");
         System.out.println("\t-----\t-----\t------");
         for (int j = 0; j < vertexNum; ++j) {
@@ -107,7 +124,11 @@ public class Main {
         System.out.println("\n\t---------Dijkstra Algoritm Test END------\n");
 
     }
-
+    /**
+     * Prim's Algorithm Test
+     * @param graph Abstract class type
+     * @param vertexNum number of vertex. 
+     */
     public static void PrimAlgorithm_Test(AbstractGraph graph, int vertexNum) {
         System.out.println("\t--------------Prim Algoritm Test----------");
         ArrayList minSpanTree = new ArrayList();
@@ -120,7 +141,7 @@ public class Main {
         }
         System.out.println("\t-----------Prim Algoritm Test END----------");
     }
-
+   
     private static void matrixTest_1() throws FileNotFoundException {
         System.out.println("\t-----------Test 1 10_0.2xml------------");
         int vertexNum = 11;
@@ -386,61 +407,61 @@ public class Main {
 
     private static void ListTest_2() throws FileNotFoundException {
         System.out.println("\t-----------Test 2 50_0.2xml------------");
-        int vertexNum = 52;
+        int vertexNum = 50;
         String file = "50_0.2.xml";
         ListGraph graph = new ListGraph(vertexNum, true);
         graph.loadFullGraph(file);
         //System.out.println(graph.toString());
         PrimAlgorithm_Test(graph, vertexNum);
-        DijkstraAlgorithm_Test(graph, vertexNum);
+       // DijkstraAlgorithm_Test(graph, vertexNum);
         System.out.println("\t---------Test 2 50_0.2xml END---------");
     }
 
     private static void ListTest_3() throws FileNotFoundException {
         System.out.println("\t-----------Test 3 100_0.2xml------------");
-        int vertexNum = 101;
+        int vertexNum = 100;
         String file = "100_0.2.xml";
         ListGraph graph = new ListGraph(vertexNum, true);
         graph.loadFullGraph(file);
         // System.out.println(graph.toString());
         PrimAlgorithm_Test(graph, vertexNum);
-        DijkstraAlgorithm_Test(graph, vertexNum);
+        //DijkstraAlgorithm_Test(graph, vertexNum);
         System.out.println("\t---------Test 3 100_0.2xml END---------");
     }
 
     private static void ListTest_4() throws FileNotFoundException {
         System.out.println("\t-----------Test 4 500_0.2xml------------");
-        int vertexNum = 501;
+        int vertexNum = 500;
         String file = "500_0.2.xml";
         ListGraph graph = new ListGraph(vertexNum, true);
         graph.loadFullGraph(file);
         //System.out.println(graph.toString());
         PrimAlgorithm_Test(graph, vertexNum);
-        DijkstraAlgorithm_Test(graph, vertexNum);
+        //DijkstraAlgorithm_Test(graph, vertexNum);
         System.out.println("\t---------Test 4 500_0.2xml END---------");
     }
 
     private static void ListTest_5() throws FileNotFoundException {
         System.out.println("\t-----------Test 5 1000_0.2xml------------");
-        int vertexNum = 1001;
+        int vertexNum = 1002;
         String file = "1000_0.2.xml";
         ListGraph graph = new ListGraph(vertexNum, true);
         graph.loadFullGraph(file);
         //System.out.println(graph.toString());
         PrimAlgorithm_Test(graph, vertexNum);
-        DijkstraAlgorithm_Test(graph, vertexNum);
+        //DijkstraAlgorithm_Test(graph, vertexNum);
         System.out.println("\t---------Test 5 1000_0.2xml END---------");
     }
 
     private static void ListTest_6() throws FileNotFoundException {
         System.out.println("\t-----------Test 6 10_0.5xml------------");
-        int vertexNum = 11;
+        int vertexNum = 10;
         String file = "10_0.5.xml";
         ListGraph graph = new ListGraph(vertexNum, true);
         graph.loadFullGraph(file);
         //System.out.println(graph.toString());
         PrimAlgorithm_Test(graph, vertexNum);
-        DijkstraAlgorithm_Test(graph, vertexNum);
+        //DijkstraAlgorithm_Test(graph, vertexNum);
         System.out.println("\t---------Test 6 10_0.5xml END---------");
     }
 
@@ -625,7 +646,6 @@ public class Main {
 
     /**
      * Prim’s Minimum Spanning Tree algorithm.
-     *
      * @param graph The weighted graph to be searched
      * @param start The start vertex
      * @return An ArrayList of edges that forms the MST
@@ -634,7 +654,7 @@ public class Main {
             int start) {
         ArrayList< Edge> result = new ArrayList< Edge>();
         int numV = graph.getNumV();
-        //System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"+numV);
+        
         // Use a HashSet to represent V–S.
         Set< Integer> vMinusS = new HashSet< Integer>(numV);
         // Declare the priority queue.
@@ -663,7 +683,8 @@ public class Main {
             int dest = -1;
             Edge edge = null;
             do {
-                edge = pQ.remove();
+                //if(pQ.size()!=0)
+                    edge = pQ.remove();
                 dest = edge.getDest();
             } while (!vMinusS.contains(dest));
             // Take dest out of vMinusS.
@@ -672,7 +693,6 @@ public class Main {
             result.add(edge);
             current = dest;
         }
-        //System.out.println("eeeeeeee"+result.toString());
         return result;
     }
 

@@ -7,10 +7,10 @@
 package com.mycompany.hw09_part1_091044011;
 
 import java.util.*;
-import java.io.*;
 
 /**
- *
+ * This Class extends Abstract class and
+ * Data Filed is List edges.
  * @author ercan
  */
 public class ListGraph
@@ -63,7 +63,11 @@ public class ListGraph
                     edge.getWeight()));
         }
     }
-
+    /**
+     * This method iterator of list Graph
+     * @param source source of edge
+     * @return iterator by using source
+     */
     @Override
     public Iterator< Edge> edgeIterator(int source) {
         return edges[source].iterator();
@@ -92,7 +96,6 @@ public class ListGraph
 
     /**
      * This method return info about this class
-     *
      * @return string informations.
      */
     @Override

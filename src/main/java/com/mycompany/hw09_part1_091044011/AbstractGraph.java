@@ -34,7 +34,11 @@ public abstract class AbstractGraph
      */
     private boolean directed;
 
-
+    /**
+     * Constructor with 2 parameters.
+     * @param numV this is total edges number
+     * @param directed true if directed, otherwise false.
+     */
     public AbstractGraph(int numV, boolean directed) {
         this.numV = numV;
         this.directed = directed;
@@ -43,7 +47,6 @@ public abstract class AbstractGraph
     // Accessor Methods
     /**
      * Return the number of vertices.
-     *
      * @return The number of vertices
      */
     @Override
@@ -53,7 +56,6 @@ public abstract class AbstractGraph
 
     /**
      * Return whether this is a directed graph.
-     *
      * @return true if this is a directed graph
      */
     @Override
@@ -67,8 +69,7 @@ public abstract class AbstractGraph
      * contain a series of lines, each line with two or three data values. The
      * first is the source, the second is the destination, and the optional
      * third is the weight.
-     *
-     * @param scan
+     * @param scan This is for using file and find lines and informations into lines.
      */
     public void loadEdgesFromFile(Scanner scan) {
         //this code is a text exercise… this version defaults to unweighted graph
@@ -118,7 +119,7 @@ public abstract class AbstractGraph
     }
 
    /**
-    *  load graph
+    * Load our graph
     * @param filename file name is our .xml file
     * @throws FileNotFoundException When file is not found
     */
@@ -136,7 +137,6 @@ public abstract class AbstractGraph
 
     /**
      * Dijkstra’s Shortest-Path algorithm.
-     *
      * @param graph The weighted graph to be searched
      * @param start The start vertex
      * @param pred Output array to contain the predecessors in the shortest path

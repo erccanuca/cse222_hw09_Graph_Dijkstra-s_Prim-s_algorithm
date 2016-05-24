@@ -6,7 +6,7 @@
 package com.mycompany.hw09_part1_091044011;
 
 /**
- *
+ * This Class for edges.
  * @author ercan
  */
 public class Edge {

@@ -5,15 +5,11 @@
  */
 package com.mycompany.hw09_part1_091044011;
 
-import java.io.FileNotFoundException;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
 import java.util.Iterator;
-import java.util.Locale;
 import java.util.NoSuchElementException;
 
 /**
- *
+ * This class matrix graph data fields double 2 dimension array.
  * @author ercan
  */
 public class MatrixGraph extends AbstractGraph {
@@ -22,6 +18,9 @@ public class MatrixGraph extends AbstractGraph {
      * edges 2 dimension array
      */
     private double[][] edges;
+    /**
+     * This is infinity value for unused.
+     */
     private final static double infinity=9999.0;
     /**
      * Constructor with 2 parameters

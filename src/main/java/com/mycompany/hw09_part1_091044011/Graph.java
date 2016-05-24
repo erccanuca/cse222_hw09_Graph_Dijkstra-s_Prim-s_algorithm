@@ -9,13 +9,9 @@ import java.util.Iterator;
 *   of the Graph interface should provide a constructor
 *   that specifies the number of vertices and whether
 *   or not the graph is directed.
-*   @author Koffman and Wolfgang
+* 
+* @author ercan
 */
-
-/**
- *
- * @author ercan
- */
 public interface Graph {
 
   // Accessor Methods
