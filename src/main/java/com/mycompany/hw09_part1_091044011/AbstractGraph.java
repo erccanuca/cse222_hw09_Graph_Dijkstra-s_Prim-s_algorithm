@@ -36,6 +36,7 @@ public abstract class AbstractGraph
 
     /**
      * Constructor with 2 parameters.
+     *
      * @param numV this is total edges number
      * @param directed true if directed, otherwise false.
      */
@@ -47,6 +48,7 @@ public abstract class AbstractGraph
     // Accessor Methods
     /**
      * Return the number of vertices.
+     *
      * @return The number of vertices
      */
     @Override
@@ -56,6 +58,7 @@ public abstract class AbstractGraph
 
     /**
      * Return whether this is a directed graph.
+     *
      * @return true if this is a directed graph
      */
     @Override
@@ -69,7 +72,9 @@ public abstract class AbstractGraph
      * contain a series of lines, each line with two or three data values. The
      * first is the source, the second is the destination, and the optional
      * third is the weight.
-     * @param scan This is for using file and find lines and informations into lines.
+     *
+     * @param scan This is for using file and find lines and informations into
+     * lines.
      */
     public void loadEdgesFromFile(Scanner scan) {
         //this code is a text exercise… this version defaults to unweighted graph
@@ -108,7 +113,7 @@ public abstract class AbstractGraph
                     int source = Integer.parseInt((String) arr.get(0));
                     int dest = Integer.parseInt((String) arr.get(1));
                     double wieght = Double.parseDouble((String) arr.get(2));
-                    insert(new Edge(source-1, dest-1, wieght));
+                    insert(new Edge(source - 1, dest - 1, wieght));
                     //System.out.println("arr:"+arr.toString());
                     arr.removeAll(arr);
                     counter = 0;
@@ -118,11 +123,12 @@ public abstract class AbstractGraph
         }
     }
 
-   /**
-    * Load our graph
-    * @param filename file name is our .xml file
-    * @throws FileNotFoundException When file is not found
-    */
+    /**
+     * Load our graph
+     *
+     * @param filename file name is our .xml file
+     * @throws FileNotFoundException When file is not found
+     */
     public void loadFullGraph(String filename) throws FileNotFoundException {
 
         try {
@@ -137,6 +143,7 @@ public abstract class AbstractGraph
 
     /**
      * Dijkstra’s Shortest-Path algorithm.
+     *
      * @param graph The weighted graph to be searched
      * @param start The start vertex
      * @param pred Output array to contain the predecessors in the shortest path
@@ -146,7 +153,7 @@ public abstract class AbstractGraph
             int start,
             int[] pred,
             double[] dist) {
-        
+
         int numV = graph.getNumV();
         HashSet<Integer> vMinusS = new HashSet<Integer>(numV);
         for (int i = 0; i < numV; ++i) {
@@ -154,7 +161,7 @@ public abstract class AbstractGraph
                 vMinusS.add(i);
             }
         }
-        
+
         for (int v : vMinusS) {
             pred[v] = start;
             dist[v] = graph.getEdge(start, v).getWeight();
@@ -181,47 +188,41 @@ public abstract class AbstractGraph
         }
     }
 
-
     /**
-     * Factory method to create a graph and load the data from an input file.
-     * The first line of the input file should contain the number of vertices.
-     * The remaining lines should contain the edge data as described under
-     * loadEdgesFromFile.
+     * Insert a new edge into the graph.
      *
-     * @param bR The BufferedReader that is connected to the file that contains
-     * the data
-     * @param isDirected true if this is a directed graph, false otherwise
-     * @param type The string "Matrix" if an adjacency matrix is to be created,
-     * and the string "List" if an adjacency list is to be created
-     * @return
-     * @throws IOException if there is an I/O error
-     * @throws IllegalArgumentException if type is neither "Matrix" nor "List"
+     * @param edge The new edge
      */
-    /*public static Graph createGraph(BufferedReader bR,
-     boolean isDirected,
-     String type) throws IOException {
-     String line = bR.readLine();
-     int numV = Integer.parseInt(line);
-     AbstractGraph returnValue = null;
-     if (type.equalsIgnoreCase("Matrix")) {
-     returnValue = new MatrixGraph(numV, isDirected);
-     } else if (type.equalsIgnoreCase("List")) {
-     returnValue = new ListGraph(numV, isDirected);
-     } else {
-     throw new IllegalArgumentException();
-     }
-     returnValue.loadEdgesFromFile(bR);
-     return returnValue;
-     }*/
     @Override
     abstract public void insert(Edge edge);
 
+    /**
+     * Determine whether an edge exists.
+     *
+     * @param source The source vertex
+     * @param dest The destination vertex
+     * @return true if there is an edge from source to dest
+     */
     @Override
     abstract public boolean isEdge(int source, int dest);
 
+    /**
+     * Get the edge between two vertices. If an edge does not exist, an Edge
+     * with a weight of Double.POSITIVE_INFINITY is returned.
+     *
+     * @param source The source
+     * @param dest The destination
+     * @return the edge between these two vertices
+     */
     @Override
     abstract public Edge getEdge(int source, int dest);
 
+    /**
+     * This method iterator of Graph
+     *
+     * @param source source of edge
+     * @return iterator by using source
+     */
     @Override
     abstract public Iterator<Edge> edgeIterator(int source);
 }

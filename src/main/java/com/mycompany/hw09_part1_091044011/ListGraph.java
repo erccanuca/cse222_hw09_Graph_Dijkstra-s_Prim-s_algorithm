@@ -39,7 +39,6 @@ public class ListGraph
 
     /**
      * Determine whether an edge exists.
-     *
      * @param source The source vertex
      * @param dest The destination vertex
      * @return true if there is an edge from source to dest
@@ -51,7 +50,6 @@ public class ListGraph
 
     /**
      * Insert a new edge into the graph.
-     *
      * @param edge The new edge
      */
     @Override
