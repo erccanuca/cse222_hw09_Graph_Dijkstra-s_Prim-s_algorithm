@@ -117,8 +117,8 @@ public class Main {
         System.out.println("\tPred\tDist\tWeight");
         System.out.println("\t-----\t-----\t------");
         for (int j = 0; j < vertexNum; ++j) {
-            System.out.printf("\t" + j + "  --> ");
-            System.out.printf("\t" + pred[j] + "");
+            System.out.printf("\t" + j + "\t-->");
+            System.out.printf("\t" + pred[j]);
             System.out.println("\t" + dist[j]);
         }
         System.out.println("\n\t---------Dijkstra Algoritm Test END------\n");
