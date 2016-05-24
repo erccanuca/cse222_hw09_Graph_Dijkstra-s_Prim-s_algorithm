@@ -20,7 +20,7 @@ public class ListGraph
     /**
      * An array of Lists to contain the edges that originate with each vertex.
      */
-    private final List< Edge>[] edges;
+    private List<Edge>[] edges;
 
     /**
      * Construct a graph with the specified number of vertices and
@@ -46,7 +46,7 @@ public class ListGraph
      */
     @Override
     public boolean isEdge(int source, int dest) {
-        return edges[source].contains(new Edge(source, dest));
+        return edges[source+1].contains(new Edge(source, dest));
     }
 
     /**
@@ -64,6 +64,7 @@ public class ListGraph
         }
     }
 
+    @Override
     public Iterator< Edge> edgeIterator(int source) {
         return edges[source].iterator();
     }

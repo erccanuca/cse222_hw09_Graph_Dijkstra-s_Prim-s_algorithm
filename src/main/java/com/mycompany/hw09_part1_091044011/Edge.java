@@ -116,5 +116,12 @@ public class Edge {
         }
         return Double.doubleToLongBits(this.weight) == Double.doubleToLongBits(other.weight);
     }
+
+    @Override
+    public String toString() {
+       
+        return  "\t"+(source+1) + "-->\t" + (dest+1) +"\t"+ weight;
+    }
+    
     
 }
