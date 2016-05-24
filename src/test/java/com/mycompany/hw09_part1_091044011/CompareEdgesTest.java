@@ -43,14 +43,13 @@ public class CompareEdgesTest {
     @Test
     public void testCompare() {
         System.out.println("compare");
-        Edge e1 = null;
-        Edge e2 = null;
+        Edge e1 = new Edge(1, 2);
+        Edge e2 = new Edge(1, 2);
         CompareEdges instance = new CompareEdges();
         int expResult = 0;
         int result = instance.compare(e1, e2);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
     
 }

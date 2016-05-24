@@ -44,11 +44,10 @@ public class MatrixGraphTest {
     @Test
     public void testInsert() {
         System.out.println("insert");
-        Edge edge = null;
-        MatrixGraph instance = null;
+        Edge edge = new Edge(1, 2);
+        MatrixGraph instance = new MatrixGraph(4, true);
         instance.insert(edge);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -59,12 +58,11 @@ public class MatrixGraphTest {
         System.out.println("isEdge");
         int source = 0;
         int dest = 0;
-        MatrixGraph instance = null;
+        MatrixGraph instance = new MatrixGraph(4, true);
         boolean expResult = false;
         boolean result = instance.isEdge(source, dest);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -73,14 +71,13 @@ public class MatrixGraphTest {
     @Test
     public void testGetEdge() {
         System.out.println("getEdge");
-        int source = 0;
-        int dest = 0;
-        MatrixGraph instance = null;
-        Edge expResult = null;
+        int source = 1;
+        int dest = 2;
+        MatrixGraph instance = new MatrixGraph(4, true);
+        Edge expResult = new Edge(1, 2,9999.0);
         Edge result = instance.getEdge(source, dest);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult.toString(), result.toString());
+        
     }
 
     /**
@@ -90,12 +87,13 @@ public class MatrixGraphTest {
     public void testEdgeIterator() {
         System.out.println("edgeIterator");
         int source = 0;
-        MatrixGraph instance = null;
-        Iterator<Edge> expResult = null;
-        Iterator<Edge> result = instance.edgeIterator(source);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        MatrixGraph instance = new MatrixGraph(4, true);
+        MatrixGraph instance2 = new MatrixGraph(4, true);
+        Iterator<Edge> expResult = instance.edgeIterator(source);
+        Iterator<Edge> expResult2 = instance2.edgeIterator(source);
+        
+        assertEquals(expResult.hasNext(), expResult2.hasNext());
+       
     }
 
     /**
@@ -104,12 +102,13 @@ public class MatrixGraphTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        MatrixGraph instance = null;
-        String expResult = "";
+        MatrixGraph instance = new MatrixGraph(1, true);
+        
+        String expResult = "	|&|\n";
         String result = instance.toString();
+        //System.err.println("res:"+result);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
     
 }

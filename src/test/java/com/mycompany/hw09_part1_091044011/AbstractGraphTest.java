@@ -5,6 +5,8 @@
  */
 package com.mycompany.hw09_part1_091044011;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Iterator;
 import java.util.Scanner;
 import org.junit.After;
@@ -45,12 +47,11 @@ public class AbstractGraphTest {
     @Test
     public void testGetNumV() {
         System.out.println("getNumV");
-        AbstractGraph instance = null;
+        AbstractGraphImpl instance = new AbstractGraphImpl();
         int expResult = 0;
         int result = instance.getNumV();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -59,25 +60,23 @@ public class AbstractGraphTest {
     @Test
     public void testIsDirected() {
         System.out.println("isDirected");
-        AbstractGraph instance = null;
+        AbstractGraphImpl instance = new AbstractGraphImpl();
         boolean expResult = false;
         boolean result = instance.isDirected();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of loadEdgesFromFile method, of class AbstractGraph.
      */
     @Test
-    public void testLoadEdgesFromFile() {
+    public void testLoadEdgesFromFile() throws FileNotFoundException {
         System.out.println("loadEdgesFromFile");
-        Scanner scan = null;
-        AbstractGraph instance = null;
+        File file = new File("10_0.2.xml");
+        Scanner scan = new Scanner(file);
+        AbstractGraphImpl instance = new AbstractGraphImpl();
         instance.loadEdgesFromFile(scan);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -86,11 +85,10 @@ public class AbstractGraphTest {
     @Test
     public void testLoadFullGraph() throws Exception {
         System.out.println("loadFullGraph");
-        String filename = "";
-        AbstractGraph instance = null;
+        String filename = "10_0.2.xml";
+        AbstractGraphImpl instance = new AbstractGraphImpl();
         instance.loadFullGraph(filename);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -99,14 +97,13 @@ public class AbstractGraphTest {
     @Test
     public void testDijkstrasAlgorithm() {
         System.out.println("dijkstrasAlgorithm");
-        Graph graph = null;
+        Graph graph = new AbstractGraphImpl();
         int start = 0;
         int[] pred = null;
         double[] dist = null;
-        AbstractGraph instance = null;
+        AbstractGraphImpl instance = new AbstractGraphImpl();
         instance.dijkstrasAlgorithm(graph, start, pred, dist);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+     
     }
 
     /**
@@ -115,11 +112,10 @@ public class AbstractGraphTest {
     @Test
     public void testInsert() {
         System.out.println("insert");
-        Edge edge = null;
-        AbstractGraph instance = null;
+        Edge edge = new Edge(1, 2);
+        AbstractGraphImpl instance = new AbstractGraphImpl();
         instance.insert(edge);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -130,12 +126,11 @@ public class AbstractGraphTest {
         System.out.println("isEdge");
         int source = 0;
         int dest = 0;
-        AbstractGraph instance = null;
+        AbstractGraphImpl instance = new AbstractGraphImpl();
         boolean expResult = false;
         boolean result = instance.isEdge(source, dest);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -146,12 +141,11 @@ public class AbstractGraphTest {
         System.out.println("getEdge");
         int source = 0;
         int dest = 0;
-        AbstractGraph instance = null;
+        AbstractGraphImpl instance = new AbstractGraphImpl();
         Edge expResult = null;
         Edge result = instance.getEdge(source, dest);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -161,12 +155,11 @@ public class AbstractGraphTest {
     public void testEdgeIterator() {
         System.out.println("edgeIterator");
         int source = 0;
-        AbstractGraph instance = null;
-        Iterator<Edge> expResult = null;
+        AbstractGraphImpl instance = new AbstractGraphImpl();
+        Iterator<Edge> expResult = instance.edgeIterator(source);
         Iterator<Edge> result = instance.edgeIterator(source);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     public class AbstractGraphImpl extends AbstractGraph {

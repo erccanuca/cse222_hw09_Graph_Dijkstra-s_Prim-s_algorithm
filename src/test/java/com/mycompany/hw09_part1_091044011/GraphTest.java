@@ -48,8 +48,7 @@ public class GraphTest {
         int expResult = 0;
         int result = instance.getNumV();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -62,8 +61,7 @@ public class GraphTest {
         boolean expResult = false;
         boolean result = instance.isDirected();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -75,8 +73,7 @@ public class GraphTest {
         Edge edge = null;
         Graph instance = new GraphImpl();
         instance.insert(edge);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
 
     /**
@@ -91,8 +88,7 @@ public class GraphTest {
         boolean expResult = false;
         boolean result = instance.isEdge(source, dest);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -107,8 +103,7 @@ public class GraphTest {
         Edge expResult = null;
         Edge result = instance.getEdge(source, dest);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
 
     /**
@@ -122,8 +117,7 @@ public class GraphTest {
         Iterator<Edge> expResult = null;
         Iterator<Edge> result = instance.edgeIterator(source);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     public class GraphImpl implements Graph {

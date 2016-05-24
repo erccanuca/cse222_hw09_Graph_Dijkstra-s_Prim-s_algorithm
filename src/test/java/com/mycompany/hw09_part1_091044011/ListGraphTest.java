@@ -44,14 +44,14 @@ public class ListGraphTest {
     @Test
     public void testIsEdge() {
         System.out.println("isEdge");
-        int source = 0;
+        int source = -1;
         int dest = 0;
-        ListGraph instance = null;
+        ListGraph instance = new ListGraph(3, false);
         boolean expResult = false;
         boolean result = instance.isEdge(source, dest);
+        //System.out.println("result:"+result);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -60,11 +60,10 @@ public class ListGraphTest {
     @Test
     public void testInsert() {
         System.out.println("insert");
-        Edge edge = null;
-        ListGraph instance = null;
+        Edge edge = new Edge(1, 2);
+        ListGraph instance = new ListGraph(2, true);
         instance.insert(edge);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -74,28 +73,26 @@ public class ListGraphTest {
     public void testEdgeIterator() {
         System.out.println("edgeIterator");
         int source = 0;
-        ListGraph instance = null;
-        Iterator<Edge> expResult = null;
-        Iterator<Edge> result = instance.edgeIterator(source);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        ListGraph instance = new ListGraph(2, true);
+        ListGraph instance2 = new ListGraph(2, true);
+        Iterator<Edge> expResult = instance.edgeIterator(source);
+        Iterator<Edge> result = instance2.edgeIterator(source);
+        assertEquals(expResult.hasNext(), result.hasNext());
     }
 
     /**
      * Test of getEdge method, of class ListGraph.
      */
-    @Test
+    @Test(expected = NullPointerException.class)
     public void testGetEdge() {
         System.out.println("getEdge");
-        int source = 0;
-        int dest = 0;
+        int source = 1;
+        int dest = 2;
         ListGraph instance = null;
         Edge expResult = null;
         Edge result = instance.getEdge(source, dest);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult,result);
+        
     }
 
     /**
@@ -104,12 +101,13 @@ public class ListGraphTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        ListGraph instance = null;
-        String expResult = "";
+        ListGraph instance = new ListGraph(1, true);
+        String expResult = "\n";
+        
         String result = instance.toString();
+       // System.err.println("res:"+result);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
     
 }

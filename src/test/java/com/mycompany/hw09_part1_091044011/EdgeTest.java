@@ -43,12 +43,11 @@ public class EdgeTest {
     @Test
     public void testGetWeight() {
         System.out.println("getWeight");
-        Edge instance = null;
-        double expResult = 0.0;
+        Edge instance = new Edge(1, 2);
+        double expResult = 1.0;
         double result = instance.getWeight();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result,1.0);
+       
     }
 
     /**
@@ -57,11 +56,11 @@ public class EdgeTest {
     @Test
     public void testSetWeight() {
         System.out.println("setWeight");
-        double weight = 0.0;
-        Edge instance = null;
+        double weight = 1.0;
+        Edge instance = new Edge(1, 2, 2.0);
         instance.setWeight(weight);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(weight, instance.getWeight(),1.0);
+        
     }
 
     /**
@@ -70,12 +69,11 @@ public class EdgeTest {
     @Test
     public void testGetSource() {
         System.out.println("getSource");
-        Edge instance = null;
-        int expResult = 0;
+        Edge instance = new Edge(1, 2);
+        int expResult = 1;
         int result = instance.getSource();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -84,11 +82,11 @@ public class EdgeTest {
     @Test
     public void testSetSource() {
         System.out.println("setSource");
-        int source = 0;
-        Edge instance = null;
+        int source = 1;
+        Edge instance = new Edge(1, 2);
         instance.setSource(source);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(source,instance.getSource(),1);
+        
     }
 
     /**
@@ -97,12 +95,11 @@ public class EdgeTest {
     @Test
     public void testGetDest() {
         System.out.println("getDest");
-        Edge instance = null;
-        int expResult = 0;
+        Edge instance = new Edge(1, 2);
+        int expResult = 2;
         int result = instance.getDest();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -111,11 +108,11 @@ public class EdgeTest {
     @Test
     public void testSetDest() {
         System.out.println("setDest");
-        int dest = 0;
-        Edge instance = null;
+        int dest = 2;
+        Edge instance = new Edge(1, 2);
         instance.setDest(dest);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(dest, instance.getDest(),2);
+       
     }
 
     /**
@@ -124,12 +121,12 @@ public class EdgeTest {
     @Test
     public void testHashCode() {
         System.out.println("hashCode");
-        Edge instance = null;
-        int expResult = 0;
+        Edge instance = new Edge(1, 2);
+        Edge instance2 = new Edge(1, 2);
+        int expResult =instance2.hashCode() ;
         int result = instance.hashCode();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -138,13 +135,14 @@ public class EdgeTest {
     @Test
     public void testEquals() {
         System.out.println("equals");
-        Object obj = null;
-        Edge instance = null;
-        boolean expResult = false;
+        Object obj = new Edge(1, 2);
+        Object obj2 = new Edge(1, 2);
+        Edge instance = new Edge(1, 2);
+        Edge instance2 = new Edge(1, 2);
+        boolean expResult = instance2.equals(obj2);
         boolean result = instance.equals(obj);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -153,12 +151,12 @@ public class EdgeTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Edge instance = null;
-        String expResult = "";
+        Edge instance = new Edge(1, 2);
+        System.out.println(instance.toString());
+        String expResult = "\t2-->\t3\t1.0";
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }
